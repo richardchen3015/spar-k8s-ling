@@ -1,0 +1,4 @@
+name: "Spar-k8s-ling pipeline"
+steps:
+  - label: ":pipeline: :champagne:"
+    command: "buildkite-agent pipeline upload .buildkite/bubbly-pipeline.yml"

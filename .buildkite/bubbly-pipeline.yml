@@ -1,0 +1,19 @@
+steps:
+- label: "Kubectl version :congratulations: :champagne:"
+  agents:
+    queue: montagne-de-reims
+  plugins:
+    - kubernetes:
+        gitEnvFrom:
+          - secretRef: { name: yer-private-git-ssh-key }
+        podSpec:
+          containers:
+            - image: alpine/k8s:1.24.16
+              command: [kubectl]
+              args:
+                - "version"
+                - "--short"
+              resources:
+                limits:
+                  cpu: "100m"
+                  memory: "128Mi"
