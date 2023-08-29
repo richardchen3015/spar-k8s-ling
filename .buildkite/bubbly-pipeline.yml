@@ -8,7 +8,7 @@ steps:
           - secretRef: { name: yer-private-git-ssh-key }
         podSpec:
           containers:
-            - image: alpine/k8s:1.24.16
+            - image: alpine/k8s:1.27.5
               command: [kubectl]
               args:
                 - "version"
